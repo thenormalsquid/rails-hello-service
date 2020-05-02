@@ -1,0 +1,25 @@
+# Dockerfile.rails
+
+FROM ruby:2.7.1-alpine
+
+RUN apk upgrade \
+    && apk add --update --no-cache \ 
+            build-base \
+            nodejs \
+            bash \
+            tzdata \ 
+            postgresql-dev \
+            libxslt-dev \
+            libxml2-dev \ 
+            zlib-dev \
+            git \
+            imagemagick && \
+            rm -rf /var/cache/apk/*
+
+ENV INSTALL_PATH /usr/app
+RUN mkdir -p $INSTALL_PATH
+
+RUN gem install rails bundler
+WORKDIR /usr/app
+
+CMD ["/bin/sh"]
