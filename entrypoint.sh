@@ -1,9 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
 set -e
 
-if [ -f tmp/pids/server.pid ]; then
-  rm tmp/pids/server.pid
-fi
-
-bundle exec rails s -b 0.0.0.0
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /usr/app/tmp/pids/server.pid

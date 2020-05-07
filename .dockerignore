@@ -2,3 +2,5 @@
 .dockerignore
 .env
 db.env
+Dockerfile
+tmp/*

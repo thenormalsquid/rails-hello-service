@@ -1,0 +1,27 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/**/*.rb'
+    - 'db/seeds.rb'
+    - 'vendor/**/*'
+    - 'config/**/*.rb'
+    - 'lib/poros/misc/mixed_team_data_migration.rb'
+    - 'bin/*'
+    - 'Gemfile'
+    - 'Rakefile'
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/**/*'
+
+Metrics/LineLength:
+  Exclude:
+    - 'db/**/*.rb'
+    - 'test/**/*'

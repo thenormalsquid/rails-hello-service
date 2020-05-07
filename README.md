@@ -19,7 +19,11 @@ Inspired by (Hello-service)[https://github.com/aliwatters/hello-service]
 - `POSTGRES_PASSWORD`
 - `POSTGRES_DB=dev`
 - `POSTGRES_HOST=database`
-2. `docker-compose up`
+2. `docker-compose up -d`
+
+**Tests**
+1. Make sure the docker container is up, with `docker-compose up -d`
+2. `docker exec -it <microservice container name> rails test`
 
 #### Endpoints
 - `/hola` - responds with a friendly message

@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
-require "rails"
+require 'rails'
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_text/engine"
-require "action_view/railtie"
-require "action_cable/engine"
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_text/engine'
+require 'action_view/railtie'
+require 'action_cable/engine'
 # require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -25,7 +27,7 @@ module App
     # Docker expects your application to log to STDOUT/STDERR and to be ran
     # in the foreground.
     config.log_level = :debug
-    config.log_tags  = [:subdomain, :uuid]
+    config.log_tags  = %i[subdomain uuid]
     config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -38,6 +40,6 @@ module App
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.eager_load_paths += %W(#{config.root}/lib)
+    config.eager_load_paths += %W[#{config.root}/lib]
   end
 end
