@@ -1,5 +1,4 @@
 ### HOLA WORLD
----
 **Goal** Create a simple service, with RESTful/Json endpoints written in RoR to test internal and external endpoint configurations in aptible.
 
 Inspired by (Hello-service)[https://github.com/aliwatters/hello-service]
